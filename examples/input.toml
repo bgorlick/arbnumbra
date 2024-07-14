@@ -1,0 +1,13 @@
+[[testcase]]
+num = "0.123456789e-5"
+precision = 10
+
+[[testcase]]
+num = "1.23e10"
+precision = 15
+radix = 10
+base = 2
+
+[[testcase]]
+num = "3.14159265358979323846"
+precision = 50

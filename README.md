@@ -2,16 +2,14 @@
 
 Arbitrary Precision Arithmetic Test Case Generator and Verifier
 
-## Overview
-
-arbnumbra is a tool for generating, experimenting with and verifying test cases for arbitrary precision arithmetic operations. It can be easily adapted to the variety of syntax needs of arbitrary precision arithmetic libraries. 
-
-I created this as a test suite to generate some quick assertion checks when I was creating my own custom arbitrary precision arithmetic lib and it proved useful so I hope others find similar benefit. 
-
-It focuses on number representation and precision handling, making it ideal for testing arbitrary precision arithmetic libraries and applications.
-
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 [![Version](https://img.shields.io/badge/version-0.0.1-blue.svg)](https://semver.org)
+
+## Overview
+
+arbnumbra is a tool for generating, experimenting with, and verifying test cases for arbitrary precision arithmetic operations. It can be easily adapted to the variety of syntax needs of arbitrary precision arithmetic libraries.
+
+I created this as a quick test suite for assertion checks while developing my own custom arbitrary precision arithmetic library. It proved so useful that I decided to share it, hoping others might find similar benefit in their projects.
 
 ## Features
 
@@ -116,6 +114,44 @@ radix = 10
 base = 2
 ```
 
+## Example Input Files
+
+The `examples/` directory contains sample input files in different formats:
+
+- `examples/input.txt`: Text file format
+- `examples/input.json`: JSON format
+- `examples/input.toml`: TOML format
+
+You can use these files to test the tool or as templates for your own input files.
+
+### Using Example Files
+
+Generate test cases from the example JSON file:
+```bash
+python arbnumbra.py -gen -f examples/input.json -o output -t json
+```
+
+Verify test cases using the example TOML file:
+```bash
+python arbnumbra.py -ver -f examples/input.toml -v
+```
+
+## Project Structure
+
+```
+arbnumbra/
+│
+├── arbnumbra.py
+├── README.md
+├── LICENSE
+├── requirements.txt
+│
+└── examples/
+    ├── input.txt
+    ├── input.json
+    └── input.toml
+```
+
 ## Use Cases
 
 - Initial validation of arbitrary precision arithmetic libraries
@@ -144,4 +180,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgements
 
 - This tool is designed as a starting point for testing arbitrary precision implementations, particularly in scenarios where exact representation and precision handling are critical.
-```
